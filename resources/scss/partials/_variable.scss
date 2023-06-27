@@ -1,0 +1,15 @@
+///**MIXIN**///
+@mixin dfc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin dfa {
+    display: flex;
+    align-items: center;
+}
+@mixin dfj {
+    display: flex;
+    justify-content: center;
+}
+
