@@ -4,3 +4,133 @@
 
 
 
+
+
+/*GENERAL*/
+ul{
+    list-style: none;
+}
+.sub_cont{
+    max-width: 780px;
+    margin: 0 auto
+}
+
+/*HEADER*/
+header{
+    nav{
+        @include dfc;
+        padding: 1rem;
+        gap: 1.1em;
+        ul{
+            @include dfc;
+            gap: .5em;
+        }
+        img{
+            height: 70px;
+        }
+    }
+    .jumbo{
+        aspect-ratio: 4.2;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: top;
+        
+    } 
+}
+
+
+/*MAIN*/
+
+.sub_cont{
+    padding: 2rem;
+    @include dfc;
+    flex-direction: column;
+    gap: 1rem;
+    .card_cont{
+        @include dfc;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .card{
+            @include dfc;
+            flex-direction: column;
+            img{
+                width: 140px;
+            }
+        }
+    }
+
+}
+/*FOOTER*/
+.top-foot{
+    background-color: $bg-tf ;
+    position: relative;
+    z-index: 2;
+
+    .max-w{
+        max-width: 900px;
+        margin-inline: auto;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: white;
+        .features-ft{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5em;
+            span{
+                white-space: nowrap;
+            }
+            img{
+                height: 45px;
+                max-width: 45px;
+            }
+        }
+    }
+}
+.main-foot{
+    color: white;
+    background-image: url('../img/footer-bg.jpg');
+    .max-w{
+        padding: 3rem;
+        max-width: 780px;
+        margin-inline: auto;
+        
+        position: relative;
+        img{
+            max-height: 140%;
+            position: absolute;
+            top: -25%;
+            right: 0;
+            z-index: 1;
+            
+           
+        }
+        .sub-cont{
+            display: flex;
+            gap: 1rem;
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: .3em;
+                margin-bottom: 1em;
+                color: grey;
+            }
+            ul li:first-child{
+                color: white;
+                font-weight: bold;
+                font-size: large;
+                margin-bottom: 0.5em;
+            }
+        }
+
+    }
+}
+.bottom-foot{
+    background: $bg-fb;
+    height: 70px;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}

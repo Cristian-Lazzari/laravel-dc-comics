@@ -1,0 +1,16 @@
+@use './partials/_reset' as *;
+@use './partials/_variable' as *; 
+@import "bootstrap/scss/bootstrap";
+
+
+
+
+
+/*GENERAL*/
+ul{
+    list-style: none;
+}
+.sub_cont{
+    max-width: 780px;
+    margin: 0 auto
+}
