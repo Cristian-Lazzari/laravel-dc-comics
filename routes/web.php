@@ -21,4 +21,4 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/comics/trashed',               [ComicController::class, 'trashed'])->name('comics.trashed');
 Route::post('/comics/{pasta}/restore',      [ComicController::class, 'restore'])->name('comics.restore');
 Route::delete('/comics/{pasta}/harddelete', [ComicController::class, 'harddelete'])->name('comics.harddelete');
-Route::resource('comics', PastaController::class);
+Route::resource('comics', ComicController::class);
