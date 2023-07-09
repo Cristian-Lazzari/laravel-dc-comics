@@ -2,6 +2,16 @@
 
 @section('contents')
     {{-- <img src="{{ Vite::asset('resources/img/picsum30.jpg') }}" alt=""> --}}
+
+    @if (session('delete_success'))
+        @php
+            $comic = session('delete_success')
+        @endphp
+        <div class="alert alert-danger">
+            {{session('delete_success')}}
+        </div>
+    @endif
+
     <div class="cont_a">
         <table class="table table-striped">
             <thead>
@@ -25,7 +35,11 @@
                         <td>
                             <a class="btn btn-primary" href="{{ route('comics.show', ['comic' =>$comic]) }}">show</a>
                             <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' =>$comic]) }}">edit</a>
-                            <a class="btn btn-danger" href="{{ route('comics.edit', ['comic' =>$comic]) }}">delete</a>
+                            <form action="{{ route('comics.destroy', ['comic' =>$comic])}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger" >delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
