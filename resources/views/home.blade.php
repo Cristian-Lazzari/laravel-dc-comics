@@ -13,6 +13,6 @@
                 </div>
             @endforeach
         </div>
-        <a href="{{ route('admin.index') }}" class="btn btn-warning">ADMIN ZONE</a>
+        <a href="{{ route('comics.index') }}" class="btn btn-warning">ADMIN ZONE</a>
     </div>
 @endsection

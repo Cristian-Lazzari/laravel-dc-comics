@@ -8,9 +8,24 @@
             $comic = session('delete_success')
         @endphp
         <div class="alert alert-danger">
-            {{session('delete_success')}}
+            "{{ $comic->title }}" has been deleted!!
+            <form action="{{ route("comics.restore", ['comic' => $comic] )}}" method="post">
+                @csrf
+                <button class="btn btn-warning">Restore</button>
+            </form>
         </div>
     @endif
+
+    @if (session('restore_success'))
+        @php
+            $comic = session('restore_success')
+        @endphp
+        <div class="alert alert-success">
+            "{{ $comic->title }}" has been restored!!
+            
+        </div>
+    @endif
+
 
     <div class="cont_a">
         <table class="table table-striped">
@@ -21,7 +36,10 @@
                     <th>TIPO</th>
                     <th>PREZZO</th>
                     <th>DATA ACQUISTO</th>
-                    <th><a class="btn btn-success" href="{{ route('comics.create') }}">nuovo</a></th>
+                    <th>
+                        <a class="btn btn-success" href="{{ route('comics.create') }}">nuovo</a>
+                        <a class="btn btn-danger" href="{{ route('comics.trashed') }}">cestino</a>
+                    </th>
                 </tr>
             </thead>
             <tbody>

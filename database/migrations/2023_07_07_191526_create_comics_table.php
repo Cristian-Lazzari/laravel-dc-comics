@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
 
             $table->string("title", 100);
-            $table->string("thumb", 200)->nullable();
+            $table->string("thumb", 700)->nullable();
             $table->string("price", 20);
             $table->string("series", 50);
             $table->string("sale_date", 20);
             $table->string("type", 50)->nullable();
             $table->text("description");
-
+            $table->softDeletes();
 
             //$table->softDeletes();
             $table->timestamps();
