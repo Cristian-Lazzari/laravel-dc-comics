@@ -11,7 +11,7 @@
                     <th>TIPO</th>
                     <th>PREZZO</th>
                     <th>DATA ACQUISTO</th>
-                    <th><a class="btn btn-primary" href="{{ route('comics.create') }}">nuovo</a></th>
+                    <th><a class="btn btn-success" href="{{ route('comics.create') }}">nuovo</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,8 +22,11 @@
                         <td>{{$comic->type}}</td>
                         <td>{{$comic->price}}</td>
                         <td>{{$comic->sale_date}}</td>
-                        <td><a class="btn btn-warning" href="{{ route('comics.show', ['comic' =>$comic]) }}">show</a>
-                        <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' =>$comic]) }}">edit</a></td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('comics.show', ['comic' =>$comic]) }}">show</a>
+                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' =>$comic]) }}">edit</a>
+                            <a class="btn btn-danger" href="{{ route('comics.edit', ['comic' =>$comic]) }}">delete</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
